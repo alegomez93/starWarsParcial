@@ -1,0 +1,28 @@
+import habitantes.*
+import planeta.*
+
+
+describe "escenario básico" 
+{
+
+	const perla = new Atleta(edad = 28, cantDeTecnicas = 4, masaMuscular = 6)
+	
+	fixture 
+	{
+		perla.entrenar(15)
+		perla.aprenderUnaTecnica()
+	}
+
+	
+	
+	test "Potencia"
+	{
+
+		assert.equals(65, perla.potencia())
+	}
+	
+	test "Es destacada"
+	{
+		assert.that(not perla.esDestacada())
+	}	
+}
